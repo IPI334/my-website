@@ -253,9 +253,12 @@ button {
 .video-wrapper {
     position:relative;
     width:100%;
+    max-width:900px;
+    margin:0 auto;
     aspect-ratio:16 / 9;
     background:#050505;
     overflow:hidden;
+    border-radius:18px;
 }
 
 .video-wrapper video,
@@ -671,6 +674,15 @@ button {
     aspect-ratio:2 / 1;
 }
 
+.memory-item.show-full-image {
+    background:#0f0f0f;
+}
+
+.memory-item.show-full-image img {
+    object-fit:contain;
+    background:#0f0f0f;
+}
+
 .memory-item img {
     width:100%;
     height:100%;
@@ -818,9 +830,20 @@ footer {
         grid-template-columns:1fr;
     }
 
+    .video-wrapper {
+        max-width:420px;
+        aspect-ratio:9 / 16;
+    }
+
     .memory-item.large {
         grid-column:span 1;
-        aspect-ratio:1 / 1;
+        aspect-ratio:auto;
+    }
+
+    .memory-item.show-full-image img {
+        width:100%;
+        height:auto;
+        display:block;
     }
 
     .quote,
@@ -1503,7 +1526,7 @@ footer {
 
         <div class="memory-grid">
 
-            <div class="memory-item large">
+            <div class="memory-item large show-full-image">
                 <img src="images/image-09.jpg" alt="Фотография военных лет" loading="lazy">
             </div>
 
